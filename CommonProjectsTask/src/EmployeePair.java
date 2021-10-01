@@ -3,8 +3,6 @@ public class EmployeePair {
     private Employee employee2;
 
     public EmployeePair() {
-        assert employee1 != null;
-        assert employee2 != null;
     }
 
     public Employee getEmployee1() {
