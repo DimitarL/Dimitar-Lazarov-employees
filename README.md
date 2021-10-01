@@ -25,5 +25,6 @@ Sample input file content:
 Sample output:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The couple of employees who have worked together on common projects for the longest time is: 129 & 105. They have worked together for 3 days.
 
-Start of the task: 30 September 2021, 17:30:00  
-End of the task: 1 October 2021, 13:30:00
+Development time  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Start: 30 September 2021, 17:30:00  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End: 1 October 2021, 13:30:00
