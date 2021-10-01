@@ -17,15 +17,12 @@ Sample input file content:
 
 180,29,2020-09-27,2020-11-24  
 129,26,2015-02-21,2015-02-24  
-
-105,26,2015-02-21,2015-02-24 
-
+105,26,2015-02-21,2015-02-24  
 123,26,2015-02-22,2015-02-24 
 
-129,26,2015-02-20,2015-02-24 
 
-105,26,2015-02-21,2015-02-24 
-
+129,26,2015-02-20,2015-02-24  
+105,26,2015-02-21,2015-02-24  
 
 Sample output:
 The couple of employees who have worked together on common projects for the longest time is: 129 & 105. They have worked together for 3 days.
