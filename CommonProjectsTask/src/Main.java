@@ -42,7 +42,7 @@ public class Main {
 
     private static void findMaxPair(List<Employee> employeeList) {
         long maxWorkingDays = 0;
-        EmployeePair<Integer, Integer> maxWorkingEmployees = new EmployeePair<>(0, 0);
+        EmployeePair maxWorkingEmployees = new EmployeePair();
 
         for (int i = 0; i < employeeList.size() - 1; i++) {
             for (int j = i + 1; j < employeeList.size(); j++) {
@@ -51,15 +51,16 @@ public class Main {
 
                 long currentWorkingMaxDays = first.getMaxWorkingDays(second);
                 if (currentWorkingMaxDays > maxWorkingDays) {
-                    maxWorkingEmployees.setEmployee1(first.getId());
-                    maxWorkingEmployees.setEmployee2(second.getId());
+                    maxWorkingEmployees.setEmployee1(first);
+                    maxWorkingEmployees.setEmployee2(second);
                     maxWorkingDays = currentWorkingMaxDays;
                 }
             }
         }
 
         System.out.println("The couple of employees who have worked together on common projects for the longest " +
-                "time is: " + maxWorkingEmployees.getEmployee1() + " & " + maxWorkingEmployees.getEmployee2() +
-                ". They have worked together for " + maxWorkingDays + " days.");
+                "time is: " + maxWorkingEmployees.getEmployee1().getId() + " & " +
+                maxWorkingEmployees.getEmployee2().getId() + ". They have worked together for " + maxWorkingDays +
+                " days.");
     }
 }
