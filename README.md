@@ -13,8 +13,7 @@ Text file format:
 Sample input:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input/inputFile.txt
 
-Sample input file content: 
-
+Sample input file content:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;180,29,2020-09-27,2020-11-24  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;129,26,2015-02-21,2015-02-24  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;105,26,2015-02-21,2015-02-24  
