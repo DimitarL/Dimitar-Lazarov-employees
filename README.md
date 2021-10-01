@@ -7,7 +7,7 @@ In order to use the application you must provide a path to the input information
 
 There is present a simple testing file in the input directory.
 
-* Text file format:
+* Text file format: 
 EmpID, ProjectID, DateFrom, DateTo
 
 Sample input:
