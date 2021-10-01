@@ -8,7 +8,7 @@ In order to use the application you must provide a path to the input information
 There is present a simple testing file in the input directory.
 
 Text file format:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EmpID, ProjectID, DateFrom, DateTo
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EmpID,ProjectID,DateFrom,DateTo
 
 Sample input:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input/inputFile.txt
