@@ -7,10 +7,10 @@ In order to use the application you must provide a path to the input information
 
 There is present a simple testing file in the input directory.
 
-Text file format: 
+Text file format:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EmpID, ProjectID, DateFrom, DateTo
 
-Sample input:
+Sample input:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input/inputFile.txt
 
 Sample input file content: 
@@ -23,5 +23,5 @@ Sample input file content:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;129,26,2015-02-20,2015-02-24  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;105,26,2015-02-21,2015-02-24  
 
-Sample output:
+Sample output:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The couple of employees who have worked together on common projects for the longest time is: 129 & 105. They have worked together for 3 days.
