@@ -2,11 +2,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class WorkRangesByProject {
+public class WorkRangeByProject {
     private final Date startDate;
     private final Date endDate;
 
-    public WorkRangesByProject(Date startDate, Date endDate) {
+    public WorkRangeByProject(Date startDate, Date endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
     }
@@ -19,24 +19,24 @@ public class WorkRangesByProject {
         return endDate;
     }
 
-    public static long getMaximumWorkingDaysByProject(
-            List<WorkRangesByProject> firstEmployeeWorkRanges,
-            List<WorkRangesByProject> secondEmployeeWorkRanges) {
+    public static long getMaximumWorkingDaysByProject(List<WorkRangeByProject> firstEmployeeWorkRanges,
+            List<WorkRangeByProject> secondEmployeeWorkRanges) {
 
         if (firstEmployeeWorkRanges == null || secondEmployeeWorkRanges == null) {
             return 0L;
         }
 
         long maxWorkingDays = 0;
-        for (WorkRangesByProject workRange : firstEmployeeWorkRanges) {
-            maxWorkingDays += secondEmployeeWorkRanges.stream().mapToLong(days -> getDaysIntersection(workRange, days))
+        for (WorkRangeByProject workRange : firstEmployeeWorkRanges) {
+            maxWorkingDays += secondEmployeeWorkRanges.stream()
+                    .mapToLong(range -> getDaysIntersection(workRange, range))
                     .sum();
         }
 
         return maxWorkingDays;
     }
 
-    public static long getDaysIntersection(WorkRangesByProject firstWorkRange, WorkRangesByProject secondWorkRange) {
+    public static long getDaysIntersection(WorkRangeByProject firstWorkRange, WorkRangeByProject secondWorkRange) {
         Date fDateStart = firstWorkRange.getStartDate();
         Date fDateEnd = firstWorkRange.getEndDate();
 

@@ -5,22 +5,22 @@ import java.util.HashMap;
 
 public class Employee {
     private final int id;
-    private final Map<Integer, List<WorkRangesByProject>> workRangesByProjects = new HashMap<>();
+    private final Map<Integer, List<WorkRangeByProject>> workRangesByProjects = new HashMap<>();
 
     public Employee(Record record) {
         this.id = record.getEmployeeId();
-        WorkRangesByProject newProject = new WorkRangesByProject(record.getStartDate(), record.getEndDate());
-        List<WorkRangesByProject> newProjectContracts = new ArrayList<>();
+        WorkRangeByProject newProject = new WorkRangeByProject(record.getStartDate(), record.getEndDate());
+        List<WorkRangeByProject> listOfWorkRanges = new ArrayList<>();
 
-        newProjectContracts.add(newProject);
-        workRangesByProjects.put(record.getProjectId(), newProjectContracts);
+        listOfWorkRanges.add(newProject);
+        workRangesByProjects.put(record.getProjectId(), listOfWorkRanges);
     }
 
     public int getId() {
         return id;
     }
 
-    public List<WorkRangesByProject> getProjectsById(int id) {
+    public List<WorkRangeByProject> getProjectsWorkRangesById(int id) {
         return workRangesByProjects.get(id);
     }
 
@@ -28,26 +28,26 @@ public class Employee {
         if (this.id == otherEmployee.id) return 0L;
         long maxWorkingDays = 0;
 
-        for (Map.Entry<Integer, List<WorkRangesByProject>> project : workRangesByProjects.entrySet()) {
-            List<WorkRangesByProject> otherEmployeeProjectContracts =
-                    otherEmployee.getProjectsById(project.getKey());
+        for (Map.Entry<Integer, List<WorkRangeByProject>> project : workRangesByProjects.entrySet()) {
+            List<WorkRangeByProject> otherEmployeeWorkRanges =
+                    otherEmployee.getProjectsWorkRangesById(project.getKey());
 
-            maxWorkingDays += WorkRangesByProject.getMaximumWorkingDaysByProject(project.getValue(),
-                    otherEmployeeProjectContracts);
+            maxWorkingDays += WorkRangeByProject.getMaximumWorkingDaysByProject(project.getValue(),
+                    otherEmployeeWorkRanges);
         }
         return maxWorkingDays;
     }
 
     public void addProjectFromRecord(Record record) {
-        WorkRangesByProject WorkRange = new WorkRangesByProject(record.getStartDate(), record.getEndDate());
+        WorkRangeByProject workRange = new WorkRangeByProject(record.getStartDate(), record.getEndDate());
 
         if (workRangesByProjects.containsKey(record.getProjectId())) {
-            workRangesByProjects.get(record.getProjectId()).add(WorkRange);
+            workRangesByProjects.get(record.getProjectId()).add(workRange);
         } else {
-            List<WorkRangesByProject> Project = new ArrayList<>();
+            List<WorkRangeByProject> listOfWorkRanges = new ArrayList<>();
 
-            Project.add(WorkRange);
-            workRangesByProjects.put(record.getProjectId(), Project);
+            listOfWorkRanges.add(workRange);
+            workRangesByProjects.put(record.getProjectId(), listOfWorkRanges);
         }
     }
 }
